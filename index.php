@@ -21,7 +21,7 @@ if(isset($_SESSION['username'])){
  <body>
 
  	<?php 
-		include 'dbconnection.php';
+		include 'pages/dbconnection.php';
 		$cases = "select * from caseupdates";
 		$query = mysqli_query($connection, $cases);
 		while ($row = mysqli_fetch_array($query)) {
