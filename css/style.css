@@ -1,251 +1,138 @@
+<style type="text/css">
+
+html{
+	scroll-behavior:smooth;
+}
+
+.heading{
+	font-family: 'Comic Neue', cursive;
+}
+
+.row{margin-left:0!important; margin-right: 0!important;}
 *{
-	padding: 0;
 	margin: 0;
+	padding: 0;
 	box-sizing: border-box;
+	font-family: 'Muli', sans-serif;
+}
+.nav_style{
+	background-color:#007bff!important;
+
+}
+.nav_style a{color:white;}
+
+
+/* /************ Main Header***********/ */
+
+.main_header{
+	height: 450px;
+	width: 100%;
+	
+}
+.rightside h1{
+	font-size: 3rem;
+	
 }
 
-body{
-    font-family: 'Poppins', sans-serif;
-    overflow: hidden;
+.corona_rot img{
+	animation: gocorona 3s linear infinite;
 }
 
-.wave{
+@keyframes gocorona{
+	0% {transform: rotate(0);}
+	100% {transform: rotate(360deg);}
+}
+
+.leftside img{
+	animation: heartbeat 5s linear infinite; }
+
+@keyframes heartbeat{
+	0% {transform: scale(.75);}
+	20% {transform: scale(1);}
+	40% {transform: scale(.75);}
+	60% {transform: scale(1);}
+	80% {transform: scale(.75);}
+	100% {transform: scale(1);}
+	
+}
+
+.corona_update{
+	margin: 0 0 30px 0;
+}
+
+.corona_update h3{
+	color: #ff7675;
+}
+.corona_update h1{
+	font-size: 2rem;
+	text-align:center;
+}
+
+.sub_section{
+	background-color: #fbfafd;
+}
+
+.footer_style{
+	background-color: #007bff!important;
+}
+
+.footer_style p{
+	margin-bottom: 0!important;
+	
+}
+
+#myBTN
+{
+	display: none;
 	position: fixed;
-	bottom: 0;
-	left: 0;
-	height: 100%;
-	z-index: -1;
-}
-
-.container{
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap :7rem;
-    padding: 0 2rem;
-}
-
-.img{
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-}
-
-.login-content{
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	text-align: center;
-}
-
-.img img{
-	width: 500px;
-}
-
-form{
-	width: 360px;
-}
-
-.login-content img{
-    height: 100px;
-}
-
-.login-content h2{
-	margin: 15px 0;
-	color: #333;
-	text-transform: uppercase;
-	font-size: 2.9rem;
-}
-
-.login-content .input-div{
-	position: relative;
-    display: grid;
-    grid-template-columns: 7% 93%;
-    margin: 25px 0;
-    padding: 5px 0;
-    border-bottom: 2px solid #d9d9d9;
-}
-
-.login-content .input-div.one{
-	margin-top: 0;
-}
-
-.i{
-	color: #d9d9d9;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.i i{
-	transition: .3s;
-}
-
-.input-div > div{
-    position: relative;
-	height: 45px;
-}
-
-.input-div > div > h5{
-	position: absolute;
-	left: 10px;
-	top: 50%;
-	transform: translateY(-50%);
-	color: #999;
-	font-size: 18px;
-	transition: .3s;
-}
-
-.input-div:before, .input-div:after{
-	content: '';
-	position: absolute;
-	bottom: -2px;
-	width: 0%;
-	height: 2px;
-	background-color: #38d39f;
-	transition: .4s;
-}
-
-.input-div:before{
-	right: 50%;
-}
-
-.input-div:after{
-	left: 50%;
-}
-
-.input-div.focus:before, .input-div.focus:after{
-	width: 50%;
-}
-
-.input-div.focus > div > h5{
-	top: -5px;
-	font-size: 15px;
-}
-
-.input-div.focus > .i > i{
-	color: #38d39f;
-}
-
-.input-div > div > input{
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
+	bottom: 30px;
+	right: 40px;
+	z-index: 99;
 	border: none;
 	outline: none;
-	background: none;
-	padding: 0.5rem 0.7rem;
-	font-size: 1.2rem;
-	color: #555;
-	font-family: 'poppins', sans-serif;
-}
-
-.input-div.pass{
-	margin-bottom: 4px;
-}
-
-a{
-	display: block;
-	text-align: right;
-	text-decoration: none;
-	color: #999;
-	font-size: 0.9rem;
-	transition: .3s;
-}
-
-a:hover{
-	color: #38d39f;
-}
-
-.btn{
-	display: block;
-	width: 100%;
-	height: 50px;
-	border-radius: 25px;
-	outline: none;
-	border: none;
-	background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
-	background-size: 200%;
-	font-size: 1.2rem;
-	color: #fff;
-	font-family: 'Poppins', sans-serif;
-	text-transform: uppercase;
-	margin: 1rem 0;
+	background-color: #00A8FF;
+	color: white;
 	cursor: pointer;
-	transition: .5s;
-}
-.btn:hover{
-	background-position: right;
+	padding: 10px;
+	border-radius: 10px;
 }
 
-
-@media screen and (max-width: 1050px){
-	.container{
-		grid-gap: 5rem;
-	}
+#myBTN:hover
+{
+	background: #606060
 }
 
-@media screen and (max-width: 1000px){
-	form{
-		width: 290px;
+@media(max-width:768px)
+{
+	.main_header{
+		height: 700px;
+		text-align: center;
 	}
-
-	.login-content h2{
-        font-size: 2.4rem;
-        margin: 8px 0;
+	.main_header h1{
+		text-align: center;
+		padding: 0;
+		width: 100%;
+	font-size: 34px;}
+	
+	.count_style{
+		display:inline!important;
 	}
-
-	.img img{
-		width: 400px;
+	
+	.count_style p{
+		text-align: center;
 	}
+	
+	.about_res{
+		margin-left: 0!important;
+		
+	}
+		
+	
 }
 
-@media screen and (max-width: 900px){
-	.container{
-		grid-template-columns: 1fr;
-	}
-
-	.img{
-		display: none;
-	}
-
-	.wave{
-		display: none;
-	}
-
-	.login-content{
-		justify-content: center;
-	}
-}
+/* **** */
 
 
-/* devanagari */
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: local('Poppins SemiBold'), local('Poppins-SemiBold'), url(https://fonts.gstatic.com/s/poppins/v9/pxiByp8kv8JHgFVrLEj6Z11lFc-K.woff2) format('woff2');
-  unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
-}
-/* latin-ext */
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: local('Poppins SemiBold'), local('Poppins-SemiBold'), url(https://fonts.gstatic.com/s/poppins/v9/pxiByp8kv8JHgFVrLEj6Z1JlFc-K.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-/* latin */
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: local('Poppins SemiBold'), local('Poppins-SemiBold'), url(https://fonts.gstatic.com/s/poppins/v9/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
+
+
+</style>

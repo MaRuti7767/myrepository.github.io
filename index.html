@@ -1,11 +1,4 @@
-<?php
-session_start();
 
-if(isset($_SESSION['username'])){
-	//echo "You are Logged out";
-	//header('location:login.php');
-}
-?>
 
 
 <!DOCTYPE html>
@@ -14,19 +7,28 @@ if(isset($_SESSION['username'])){
 
 	<link rel="icon" href="img/virus.png" type="image/png">
   <title>Covid-19 | Home</title>
-  <?php include 'links/links.php'; ?>
-  <?php include 'css/style.php'; ?>
+  <link rel="stylesheet" href="css/style.css"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="css/font.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY=" crossorigin="anonymous" />
+  
+  <link rel="stylesheet" href="css/font-awesome.min.css" >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+
+  
   
  </head>
  <body>
 
- 	<?php 
-		include 'pages/dbconnection.php';
+ 	<!--<?php 
+		include 'dbconnection.php';
 		$cases = "select * from caseupdates";
 		$query = mysqli_query($connection, $cases);
 		while ($row = mysqli_fetch_array($query)) {
 
-	?>
+	?>-->
 <nav class="navbar navbar-expand-lg nav_style p-3">
   <a class="navbar-brand pl-5" href="#">Covid-19</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,21 +83,22 @@ if(isset($_SESSION['username'])){
 	<div class="mb-3">
 		<h3 class="text-uppercase text-center">latest updates</h3>
 	</div>
+	<div class="grid"></div>
 	<div class="d-flex justify-content-around align-items-center text-capitalize count_style">
 			<div>
-				<h1 class="count"><?php echo $row['confirmed']; ?></h1>
+				<h1 class="count">42,505</h1>
 				<p>confirmed</p>
 			</div>
 			<div>
-				<h1 class="count"><?php echo $row['active']; ?></h1>
+				<h1 class="count">29,335</h1>
 				<p>active</p>
 			</div>
 			<div>
-				<h1 class="count"><?php echo $row['recovered']; ?></h1>
+				<h1 class="count">11,775</h1>
 				<p>recovered</p>
 			</div>
 			<div>
-				<h1 class="count"><?php echo $row['deceased']; ?></h1>
+				<h1 class="count">1,391</h1>
 				<p>deceased</p>
 			</div>
 	</div>
@@ -108,7 +111,7 @@ if(isset($_SESSION['username'])){
 		<h1>About Covid-19</h1>
 	</div>
 	<div class="row pt-5 ">
-		<div class="col-lg-5 col-md-6 col-12 ml-5 about_res">
+		<div class="col-lg-5 col-md-6 col-12 about_res">
 			<img src="img/about.png" class="img-fluid">
 		</div>
 		<div class="col-lg-6 col-md-6 c0l-12 mt-3">
@@ -284,7 +287,7 @@ if(isset($_SESSION['username'])){
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 offset-lg-2 col-12">
-				<form action="<?php echo htmlentities($_SERVER['PHP_SELF']);?>" method="POST">
+				<form action="thank.html" method="POST">
 					<div class="form-group">
 						<label>Name</label>
 						<input type="text" class="form-control" name="name" placeholder="Name" autocomplete="off" required>
@@ -368,10 +371,17 @@ function topFunction()
 }
 </script>
 
+<script src="js/jquery.min.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.counterup.min.js"></script>
+  
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
 
  
- 
- 
+ <!--==========Insert contact us data======-->
+ <!--
  <?php
  include 'dbconnection.php';
  
@@ -406,34 +416,7 @@ function topFunction()
 		<?php
 	}
  }
- ?>
+ ?>-->
+<!--==========End Insert contact us data======-->
 
-<script type="text/javascript">
-
-
- async function getcovid19data(indexapi)
- {
-
- 	try
- 	{
- 		const jsondata = await fetch('https://api.covid19api.com/summary');
- 		const jsdata=await jsondata.json();
-
- 		const countryData=jsdata.Countries[`${indexapi}`];
-
- 		console.log(`Country is ${countryData.Country}. TotalConfirmed cases ${countryData.TotalConfirmed} and TotalDeaths ${countryData.TotalDeaths} and TotalRecovered ${countryData.TotalRecovered}`);
-
- 	}
- 	catch(error)
- 	{
- 		console.log(`The Error:${error}`);
-
- 	}
- 	
-
- }
-
- getcovid19data(101);
-
-</script>
 </body> </html>
